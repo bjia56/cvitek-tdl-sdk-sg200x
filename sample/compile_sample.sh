@@ -37,7 +37,7 @@ build_and_clean() {
     popd
 }
 
-#build_and_clean "${CURRENT_DIR}/cvi_tdl"
+build_and_clean "${CURRENT_DIR}/cvi_tdl"
 build_and_clean "${CURRENT_DIR}/cvitek_tdl_server"
 #build_and_clean "${CURRENT_DIR}/cvi_md"
 #build_and_clean "${CURRENT_DIR}/cvi_preprocess"

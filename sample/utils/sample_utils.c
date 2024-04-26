@@ -1,6 +1,102 @@
 #include "sample_utils.h"
 #include "cvi_tdl.h"
 #define FACE_FEAT_SIZE 256
+
+const char *obj_class_names[] = {
+  "person",
+  "bicycle",
+  "car",
+  "motorcycle",
+  "airplane",
+  "bus",
+  "train",
+  "truck",
+  "boat",
+  "traffic",
+  "fire",
+  "street",
+  "stop",
+  "parking",
+  "bench",
+  "bird",
+  "cat",
+  "dog",
+  "horse",
+  "sheep",
+  "cow",
+  "elephant",
+  "bear",
+  "zebra",
+  "giraffe",
+  "hat",
+  "backpack",
+  "umbrella",
+  "shoe",
+  "eye",
+  "handbag",
+  "tie",
+  "suitcase",
+  "frisbee",
+  "skis",
+  "snowboard",
+  "sports",
+  "kite",
+  "baseball",
+  "baseball",
+  "skateboard",
+  "surfboard",
+  "tennis",
+  "bottle",
+  "plate",
+  "wine",
+  "cup",
+  "fork",
+  "knife",
+  "spoon",
+  "bowl",
+  "banana",
+  "apple",
+  "sandwich",
+  "orange",
+  "broccoli",
+  "carrot",
+  "hot",
+  "pizza",
+  "donut",
+  "cake",
+  "chair",
+  "couch",
+  "potted",
+  "bed",
+  "mirror",
+  "dining",
+  "window",
+  "desk",
+  "toilet",
+  "door",
+  "tv",
+  "laptop",
+  "mouse",
+  "remote",
+  "keyboard",
+  "cell",
+  "microwave",
+  "oven",
+  "toaster",
+  "sink",
+  "refrigerator",
+  "blender",
+  "book",
+  "clock",
+  "vase",
+  "scissors",
+  "teddy",
+  "hair",
+  "toothbrush",
+  "hair"
+};
+
+
 CVI_S32 get_od_model_info(const char *model_name, CVI_TDL_SUPPORTED_MODEL_E *model_index,
                           ODInferenceFunc *inference_func) {
   CVI_S32 ret = CVI_SUCCESS;
@@ -23,6 +119,9 @@ CVI_S32 get_od_model_info(const char *model_name, CVI_TDL_SUPPORTED_MODEL_E *mod
   } else if (strcmp(model_name, "yolov3") == 0) {
     *model_index = CVI_TDL_SUPPORTED_MODEL_YOLOV3;
     *inference_func = CVI_TDL_Yolov3;
+  } else if (strcmp(model_name, "yolov5") == 0) {
+    *model_index = CVI_TDL_SUPPORTED_MODEL_YOLOV5;
+    *inference_func = CVI_TDL_Yolov5;
   } else if (strcmp(model_name, "yolox") == 0) {
     *model_index = CVI_TDL_SUPPORTED_MODEL_YOLOX;
     *inference_func = CVI_TDL_YoloX;

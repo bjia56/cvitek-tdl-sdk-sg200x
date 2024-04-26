@@ -198,6 +198,8 @@ typedef enum {
   CVI_TDL_DET_TYPE_END,
 } cvtdl_obj_class_id_e;
 
+extern const char *obj_class_names[];
+
 /** @enum cvtdl_obj_det_group_type_e
  *  @ingroup core_cvitdlcore
  *  @brief group id for detection classes

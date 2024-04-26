@@ -65,7 +65,7 @@ void *run_venc(void *args) {
 
     for (uint32_t oid = 0; oid < stObjMeta.size; oid++) {
       char name[256];
-      sprintf(name, "%s: %.2f", stObjMeta.info[oid].name, stObjMeta.info[oid].bbox.score);
+      sprintf(name, "%s: %.2f", obj_class_names[stObjMeta.info[oid].classes], stObjMeta.info[oid].bbox.score);
       memcpy(stObjMeta.info[oid].name, name, sizeof(stObjMeta.info[oid].name));
     }
 
